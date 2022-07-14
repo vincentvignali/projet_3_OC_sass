@@ -1,0 +1,193 @@
+.heroSection {
+  padding-bottom: $sectionPadding;
+  text-align: center;
+  background-color: $cleargrey;
+  &__locPin {
+    padding: $paddingTopLow;
+    background-color: #eaeaea;
+    gap: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $paddingTopHigh;
+    padding-top: $sectionPadding;
+
+    h2 {
+      font-size: xx-large;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .text {
+      opacity: 0.7;
+    }
+
+    .button {
+      font-weight: 500;
+      padding: 1rem;
+      border-radius: 2rem;
+      width: fit-content;
+      text-align: center;
+      color: whitesmoke;
+      background: linear-gradient($primary, $secondary);
+      box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.13);
+    }
+  }
+}
+
+.featureSection {
+  padding: $sectionPadding;
+
+  h2 {
+    font-size: xx-large;
+    font-weight: 700;
+    margin: 0;
+    @media screen and (min-width: $breakpoint) {
+      text-align: center;
+    }
+    @media screen and (max-width: $breakpoint) {
+      text-align: left;
+    }
+  }
+  &__card {
+    &:hover {
+      background-color: lighten($primary, 35);
+    }
+    &:hover > .icon {
+      opacity: 1;
+      color: $primary;
+    }
+    cursor: pointer;
+    background-color: rgb(246, 246, 246);
+    margin-top: $paddingTopHigh;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width: $breakpoint) {
+      width: 40vw;
+    }
+    @media screen and (max-width: $breakpoint) {
+      width: 65vw;
+    }
+    height: 10vh;
+    border-radius: 2rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    padding: 1em;
+    text-align: center;
+    position: relative;
+    padding-left: 3rem;
+    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.13);
+    .number {
+      color: white;
+      background-color: #9356dc;
+      width: 0.01rem;
+      height: 0.01rem;
+      border-radius: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1em;
+      position: absolute;
+      left: -1rem;
+    }
+    .icon {
+      color: lighten($color: #000000, $amount: 25);
+      display: flex;
+      justify-content: center;
+      width: 10%;
+    }
+    .title {
+      color: lighten($color: #000000, $amount: 25);
+    }
+  }
+}
+
+.restaurantSection {
+  padding: $sectionPadding;
+  background-color: $cleargrey;
+  h2 {
+    font-size: xx-large;
+    font-weight: 700;
+    margin: auto;
+    @media screen and (min-width: $breakpoint) {
+      text-align: center;
+      width: 70vw;
+    }
+    @media screen and (max-width: $breakpoint) {
+      text-align: left;
+      width: 80vw;
+    }
+  }
+  &__card {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    margin-top: $paddingTopHigh;
+    @media screen and (min-width: $breakpoint) {
+      width: 70vw;
+    }
+    @media screen and (max-width: $breakpoint) {
+      width: 80vw;
+    }
+    height: 35vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2rem;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.13);
+    .image {
+      width: 100%;
+      height: 70%;
+      position: relative;
+      display: flex;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+      .tag {
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        background-color: $tertiary;
+        color: darken($tertiary, 40);
+        font-weight: 600;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+      }
+    }
+    .infoWrapper {
+      height: 30%;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 1rem;
+      padding-right: 2rem;
+      .subWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem;
+        h3 {
+          margin: 0;
+        }
+        p {
+          margin: 0;
+        }
+      }
+      .heart_icon {
+        @include heart-icon;
+      }
+    }
+  }
+}
