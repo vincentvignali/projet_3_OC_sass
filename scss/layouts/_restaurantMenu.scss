@@ -69,36 +69,81 @@
     }
 
     .dish-card {
+      visibility: hidden;
       display: flex;
+      height: 11vh;
       background-color: white;
       border-radius: 1rem;
       padding: 0.75rem;
       box-sizing: border-box;
       justify-content: space-between;
+      overflow: hidden;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+
       .info-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-        justify-content: center;
-        padding: 0;
+        background-color: white;
+        justify-content: space-between;
+        overflow: hidden;
+        white-space: nowrap;
         h3 {
-          font-size: larger;
           margin: 0;
+          font-size: larger;
+          text-overflow: ellipsis;
+          overflow: hidden;
         }
         p {
-          font-weight: 300;
           margin: 0;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-weight: 300;
         }
       }
       .price {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        align-items: flex-end;
         padding-right: 1rem;
+        padding-left: 1rem;
+        justify-content: space-around;
         p {
-          font-size: larger;
+          padding: 0;
+          vertical-align: bottom;
           font-weight: bold;
           margin: 0;
+        }
+        .icon {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 20%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 500;
+          font-size: xx-large;
+          background-color: $tertiary;
+          transform: translateX(110%);
+          transition: all 0.5s ease-in-out;
+          i {
+            color: white;
+            font-size: 2.5rem;
+
+            transition: all 0.6s ease-in-out;
+          }
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        padding-right: 20%;
+        .price > .icon {
+          transform: translateX(0%);
+          i {
+            transform: rotate(360deg);
+          }
         }
       }
     }
@@ -117,5 +162,48 @@
     color: whitesmoke;
     background: linear-gradient($primary, $secondary);
     box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.13);
+  }
+}
+
+.appear {
+  &_1 {
+    animation: apparition 2000ms forwards;
+  }
+  &_2 {
+    animation: apparition 2000ms 300ms forwards;
+  }
+  &_3 {
+    animation: apparition 2000ms 600ms forwards;
+  }
+  &_4 {
+    animation: apparition 2000ms 900ms forwards;
+  }
+  &_5 {
+    animation: apparition 2000ms 1200ms forwards;
+  }
+  &_6 {
+    animation: apparition 2000ms 1500ms forwards;
+  }
+  &_7 {
+    animation: apparition 2000ms 1800ms forwards;
+  }
+  &_8 {
+    animation: apparition 2000ms 2100ms forwards;
+  }
+  &_9 {
+    animation: apparition 2000ms 2400ms forwards;
+  }
+  &_10 {
+    animation: apparition 2000ms 2700ms forwards;
+  }
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
   }
 }
