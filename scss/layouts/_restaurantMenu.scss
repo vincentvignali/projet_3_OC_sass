@@ -162,6 +162,10 @@
     color: whitesmoke;
     background: linear-gradient($primary, $secondary);
     box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.13);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 

@@ -31,10 +31,19 @@ body {
   margin: 0;
 }
 .footer .container .link {
+  cursor: pointer;
   margin-top: 0.25rem;
 }
+.footer .container .link:hover {
+  text-decoration: underline;
+}
 .footer .container .link i {
+  width: 20px;
   margin-right: 1%;
+}
+.footer .container a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .header {
@@ -157,6 +166,7 @@ body {
   opacity: 0.7;
 }
 .heroSection__banner .button {
+  cursor: pointer;
   font-weight: 500;
   padding: 1rem;
   border-radius: 2rem;
@@ -167,6 +177,10 @@ body {
   color: whitesmoke;
   background: linear-gradient(#9356dc, #ff79da);
   box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.13);
+  transition: all 0.3s ease-in-out;
+}
+.heroSection__banner .button:hover {
+  opacity: 0.8;
 }
 
 .featureSection {
@@ -274,6 +288,8 @@ body {
   text-align: center;
   overflow: hidden;
   box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.13);
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
 }
 .restaurantSection__card a {
   text-decoration: none;
@@ -288,6 +304,10 @@ body {
   .restaurantSection__card {
     width: 80vw;
   }
+}
+.restaurantSection__card:hover {
+  transform: scale(1.005);
+  box-shadow: 2px 3px 7px 4px rgba(0, 0, 0, 0.13);
 }
 .restaurantSection__card .image {
   width: 100%;
@@ -338,7 +358,7 @@ body {
   transition: all 200ms;
   transition-delay: 0ms, 150ms;
   position: absolute;
-  background-color: white;
+  background-color: #f6f6f6;
   font-size: 1.5em;
 }
 .restaurantSection__card .infoWrapper .heart_icon:hover {
@@ -419,7 +439,7 @@ body {
   transition: all 200ms;
   transition-delay: 0ms, 150ms;
   position: absolute;
-  background-color: white;
+  background-color: #f6f6f6;
   font-size: 1.5em;
 }
 .menu-section .page-title__wrapper .heart_icon:hover {
@@ -543,6 +563,10 @@ body {
   color: whitesmoke;
   background: linear-gradient(#9356dc, #ff79da);
   box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.13);
+  transition: all 0.3s ease-in-out;
+}
+.menu-section .order-button:hover {
+  opacity: 0.8;
 }
 
 .appear_1 {
