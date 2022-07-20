@@ -71,7 +71,12 @@
     .dish-card {
       visibility: hidden;
       display: flex;
-      height: 11vh;
+      @media screen and (min-width: $breakpoint) {
+        height: 20vh;
+      }
+      @media screen and (max-width: $breakpoint) {
+        height: 12vh;
+      }
       background-color: white;
       border-radius: 1rem;
       padding: 0.75rem;
