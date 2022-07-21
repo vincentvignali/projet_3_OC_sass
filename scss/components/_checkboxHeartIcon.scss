@@ -1,0 +1,50 @@
+@mixin checkbox-heart {
+  cursor: pointer;
+  position: relative;
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  //  Style colorful heart
+  .heart_icon_filled {
+    background-clip: text;
+    color: transparent;
+    background-image: -webkit-linear-gradient($primary, $secondary);
+    font-size: 1.5em;
+  }
+
+  //  Style Outline heart
+  .heart_icon {
+    opacity: 1;
+    transition: all 200ms;
+    transition-delay: 0ms, 150ms;
+    position: absolute;
+    background-color: $cleargrey;
+    font-size: 1.5em;
+  }
+
+  //  Unchecked Botton
+  input[type="checkbox"] + .heart_icon {
+    &:hover {
+      opacity: 1;
+    }
+    &:hover + .heart_icon_filled {
+      opacity: 0;
+    }
+    & + .heart_icon_filled {
+      opacity: 1;
+    }
+  }
+
+  //  Checked Botton
+  input[type="checkbox"]:checked + .heart_icon {
+    opacity: 0;
+    &:hover {
+      opacity: 0;
+    }
+    &:hover + .heart_icon_filled {
+      opacity: 1;
+    }
+  }
+}

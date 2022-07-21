@@ -128,17 +128,20 @@
     margin-right: auto;
     @media screen and (min-width: $breakpoint) {
       width: 40vw;
+      height: 10vh;
     }
     @media screen and (max-width: $breakpoint) {
+      height: 7vh;
       width: 65vw;
     }
-    height: 10vh;
     border-radius: 2rem;
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
+    font-size: medium;
+    font-weight: 500;
     padding: 1em;
-    text-align: center;
+    text-align: left;
     position: relative;
     padding-left: 3rem;
     box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.13);
@@ -156,10 +159,10 @@
       left: -1rem;
     }
     .icon {
-      color: lighten($color: #000000, $amount: 25);
+      color: lighten($color: #000000, $amount: 55);
       display: flex;
       justify-content: center;
-      width: 10%;
+      transform: scale(135%);
     }
     .title {
       color: lighten($color: #000000, $amount: 25);
@@ -250,8 +253,8 @@
           margin: 0;
         }
       }
-      .heart_icon {
-        @include heart-icon;
+      .checkbox-heart {
+        @include checkbox-heart;
       }
     }
   }

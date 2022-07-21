@@ -207,13 +207,14 @@ body {
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
-  height: 10vh;
   border-radius: 2rem;
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
+  font-size: medium;
+  font-weight: 500;
   padding: 1em;
-  text-align: center;
+  text-align: left;
   position: relative;
   padding-left: 3rem;
   box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.13);
@@ -228,10 +229,12 @@ body {
 @media screen and (min-width: 660px) {
   .featureSection__card {
     width: 40vw;
+    height: 10vh;
   }
 }
 @media screen and (max-width: 660px) {
   .featureSection__card {
+    height: 7vh;
     width: 65vw;
   }
 }
@@ -249,10 +252,10 @@ body {
   left: -1rem;
 }
 .featureSection__card .icon {
-  color: #404040;
+  color: #8c8c8c;
   display: flex;
   justify-content: center;
-  width: 10%;
+  transform: scale(135%);
 }
 .featureSection__card .title {
   color: #404040;
@@ -353,8 +356,22 @@ body {
 .restaurantSection__card .infoWrapper .subWrapper p {
   margin: 0;
 }
-.restaurantSection__card .infoWrapper .heart_icon {
+.restaurantSection__card .infoWrapper .checkbox-heart {
   cursor: pointer;
+  position: relative;
+}
+.restaurantSection__card .infoWrapper .checkbox-heart input {
+  position: absolute;
+  opacity: 0;
+}
+.restaurantSection__card .infoWrapper .checkbox-heart .heart_icon_filled {
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  background-image: -webkit-linear-gradient(#9356dc, #ff79da);
+  font-size: 1.5em;
+}
+.restaurantSection__card .infoWrapper .checkbox-heart .heart_icon {
   opacity: 1;
   transition: all 200ms;
   transition-delay: 0ms, 150ms;
@@ -362,19 +379,23 @@ body {
   background-color: #f6f6f6;
   font-size: 1.5em;
 }
-.restaurantSection__card .infoWrapper .heart_icon:hover {
+.restaurantSection__card .infoWrapper .checkbox-heart input[type=checkbox] + .heart_icon:hover {
+  opacity: 1;
+}
+.restaurantSection__card .infoWrapper .checkbox-heart input[type=checkbox] + .heart_icon:hover + .heart_icon_filled {
   opacity: 0;
 }
-.restaurantSection__card .infoWrapper .heart_icon:hover + .heart_icon_filled {
+.restaurantSection__card .infoWrapper .checkbox-heart input[type=checkbox] + .heart_icon + .heart_icon_filled {
   opacity: 1;
 }
-.restaurantSection__card .infoWrapper .heart_icon_filled {
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
-  background-image: -webkit-linear-gradient(#9356dc, #ff79da);
+.restaurantSection__card .infoWrapper .checkbox-heart input[type=checkbox]:checked + .heart_icon {
+  opacity: 0;
+}
+.restaurantSection__card .infoWrapper .checkbox-heart input[type=checkbox]:checked + .heart_icon:hover {
+  opacity: 0;
+}
+.restaurantSection__card .infoWrapper .checkbox-heart input[type=checkbox]:checked + .heart_icon:hover + .heart_icon_filled {
   opacity: 1;
-  font-size: 1.5em;
 }
 
 .background-section {
@@ -433,9 +454,24 @@ body {
 .menu-section .page-title__wrapper h1 {
   font-family: Shrikhand;
   margin: 0;
+  font-size: x-large;
 }
-.menu-section .page-title__wrapper .heart_icon {
+.menu-section .page-title__wrapper .checkbox-heart {
   cursor: pointer;
+  position: relative;
+}
+.menu-section .page-title__wrapper .checkbox-heart input {
+  position: absolute;
+  opacity: 0;
+}
+.menu-section .page-title__wrapper .checkbox-heart .heart_icon_filled {
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  background-image: -webkit-linear-gradient(#9356dc, #ff79da);
+  font-size: 1.5em;
+}
+.menu-section .page-title__wrapper .checkbox-heart .heart_icon {
   opacity: 1;
   transition: all 200ms;
   transition-delay: 0ms, 150ms;
@@ -443,21 +479,26 @@ body {
   background-color: #f6f6f6;
   font-size: 1.5em;
 }
-.menu-section .page-title__wrapper .heart_icon:hover {
+.menu-section .page-title__wrapper .checkbox-heart input[type=checkbox] + .heart_icon:hover {
+  opacity: 1;
+}
+.menu-section .page-title__wrapper .checkbox-heart input[type=checkbox] + .heart_icon:hover + .heart_icon_filled {
   opacity: 0;
 }
-.menu-section .page-title__wrapper .heart_icon:hover + .heart_icon_filled {
+.menu-section .page-title__wrapper .checkbox-heart input[type=checkbox] + .heart_icon + .heart_icon_filled {
   opacity: 1;
 }
-.menu-section .page-title__wrapper .heart_icon_filled {
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
-  background-image: -webkit-linear-gradient(#9356dc, #ff79da);
+.menu-section .page-title__wrapper .checkbox-heart input[type=checkbox]:checked + .heart_icon {
+  opacity: 0;
+}
+.menu-section .page-title__wrapper .checkbox-heart input[type=checkbox]:checked + .heart_icon:hover {
+  opacity: 0;
+}
+.menu-section .page-title__wrapper .checkbox-heart input[type=checkbox]:checked + .heart_icon:hover + .heart_icon_filled {
   opacity: 1;
-  font-size: 1.5em;
 }
 .menu-section .menu-step-wrapper {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -465,6 +506,8 @@ body {
 .menu-section .menu-step-wrapper .menu-step-title h2 {
   margin: 0;
   text-transform: uppercase;
+  font-size: larger;
+  font-weight: 300;
 }
 .menu-section .menu-step-wrapper .menu-step-title .separator {
   height: 3px;
@@ -486,21 +529,30 @@ body {
 }
 @media screen and (min-width: 660px) {
   .menu-section .menu-step-wrapper .dish-card {
-    height: 20vh;
+    height: 15vh;
   }
 }
 @media screen and (max-width: 660px) {
   .menu-section .menu-step-wrapper .dish-card {
-    height: 12vh;
+    height: 9vh;
   }
 }
 .menu-section .menu-step-wrapper .dish-card .info-wrapper {
   display: flex;
   flex-direction: column;
   background-color: white;
-  justify-content: space-between;
   overflow: hidden;
   white-space: nowrap;
+}
+@media screen and (min-width: 660px) {
+  .menu-section .menu-step-wrapper .dish-card .info-wrapper {
+    justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 660px) {
+  .menu-section .menu-step-wrapper .dish-card .info-wrapper {
+    justify-content: space-between;
+  }
 }
 .menu-section .menu-step-wrapper .dish-card .info-wrapper h3 {
   margin: 0;
@@ -516,10 +568,19 @@ body {
 }
 .menu-section .menu-step-wrapper .dish-card .price {
   display: flex;
-  align-items: flex-end;
   padding-right: 1rem;
   padding-left: 1rem;
   justify-content: space-around;
+}
+@media screen and (min-width: 660px) {
+  .menu-section .menu-step-wrapper .dish-card .price {
+    align-items: center;
+  }
+}
+@media screen and (max-width: 660px) {
+  .menu-section .menu-step-wrapper .dish-card .price {
+    align-items: flex-end;
+  }
 }
 .menu-section .menu-step-wrapper .dish-card .price p {
   padding: 0;
@@ -544,7 +605,7 @@ body {
 }
 .menu-section .menu-step-wrapper .dish-card .price .icon i {
   color: white;
-  font-size: 2.5rem;
+  font-size: 2rem;
   transition: all 0.6s ease-in-out;
 }
 .menu-section .menu-step-wrapper .dish-card:hover {
