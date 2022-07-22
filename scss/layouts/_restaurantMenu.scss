@@ -137,7 +137,12 @@
           position: absolute;
           top: 0;
           right: 0;
-          width: 20%;
+          @media screen and (min-width: $breakpoint) {
+            width: 15%;
+          }
+          @media screen and (max-width: $breakpoint) {
+            width: 20%;
+          }
           height: 100%;
           display: flex;
           justify-content: center;
@@ -149,7 +154,12 @@
           transition: all 0.5s ease-in-out;
           i {
             color: white;
-            font-size: 2rem;
+            @media screen and (min-width: $breakpoint) {
+              font-size: 3rem;
+            }
+            @media screen and (max-width: $breakpoint) {
+              font-size: 1.75rem;
+            }
 
             transition: all 0.6s ease-in-out;
           }
@@ -157,7 +167,12 @@
       }
       &:hover {
         cursor: pointer;
-        padding-right: 20%;
+        @media screen and (min-width: $breakpoint) {
+          padding-right: 15%;
+        }
+        @media screen and (max-width: $breakpoint) {
+          padding-right: 20%;
+        }
         .price > .icon {
           transform: translateX(0%);
           i {
